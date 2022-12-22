@@ -1,0 +1,28 @@
+Proje 2
+[16,21,11,8,12,22] -> Merge Sort
+Yukarıdaki dizinin sort türüne göre aşamalarını yazınız.
+Big-O gösterimini yazınız.
+***************************************************************************************************************************************************************
+(-)Step 1 : 6 21 11|8 12 22 --> Diziyi 2 parçaya bölüyoruz.((6-21-11) (8-12-22)) // 2 parça 
+(-)Step 2 : 6 21|11|8 12|22 --> Böldüğümüz 2 parçayı tekrardan 2 parçaya bölüyoruz. (((6-21) (11)) ((8-12) (22))) // 4 parça
+(-)Step 3 : 6|21|11|8|12|22 --> Kalan parçaları 1 parçaya indirgeyecek şekilde tekrardan 2 parçaya bölüyoruz. ((((6) (21)) (11)) (((8) (12)) (22))) // 6 parça
+(+)Step 4 : 6 21|11|8 12|22 --> 6 ile 21'i, 8 ile 12 karşılaştırıp 4 parça haline getirdik. (((6-21) (11)) ((8-12) (22))) // 4 parça
+(+)Step 5 : 6 11 21|8 12 22 --> (6-21) (11) ve (8-12) (22) parçalarını karşılaştırdık. ((6-11-21) (8-12-22)) // 2 parça 
+(+)Step 6 : 6 8 11 12 21 22 --> (6-11-21) (8-12-22) parçalarını karşılaştırdık ve sonunda dizimiz tek parça. // 1 parça
+
+(-) ile belirtilen işlemler bölme işlemi olup diziyi her eleman tek parça haline getirene kadar ortadan böldük.
+(+) ile belirtilen işlemler birleştirme işlemi olup diziyi tüm elemanları kapsayan tek bir dizi haline getiriren kadar birleştirdik.
+Aynı adımları tersten yaparken tek fark bu sefer dizilerinin elemanlarını 'karşılaştırıp' birleştirmemizdir.
+Yukarıdaki örnekten Step 6'yı detaylı inceleyelim.
+
+Oluşacak dizimiz adım adım şöyle olacaktır. 
+[ ][ ][ ][ ][ ][ ]  --> [6][11][21]    [8][12][22] --> 6 ile 8'i karşılaştırıyoruz. 6<8 olduğu için;
+[6][ ][ ][ ][ ][ ]  --> [ ][11][21]    [8][12][22] --> 11 ile 8'yi karşılaştırıyoruz. 11>8 olduğu için;
+[6][8][ ][ ][ ][ ]  --> [ ][11][21]    [ ][12][22] --> 11 ile 12'yi karşılaştırıyoruz. 11<12 olduğu için;
+[6][8][11][ ][ ][ ]  --> [ ][ ][21]    [ ][12][22] --> 21 ile 12'yi karşılaştırıyoruz. 21>12 olduğu için;
+[6][8][11][12][ ][ ]  --> [ ][ ][21]    [ ][ ][22] --> 21 ile 22'yi karşılaştırıyoruz. 21<22 olduğu için;
+[6][8][11][12][21][ ]  --> [ ][ ][ ]    [ ][ ][22] --> Ve 22 dizimizin son elemanı onu da sona ekliyoruz.
+[6][8][11][12][21][22]  
+***************************************************************************************************************************************************************
+O(n log (n))
+***************************************************************************************************************************************************************
