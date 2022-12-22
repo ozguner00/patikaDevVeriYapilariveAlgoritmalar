@@ -1,0 +1,19 @@
+Proje 3
+[7, 5, 1, 8, 3, 6, 0, 9, 4, 2] dizisinin Binary-Search-Tree aşamalarını yazınız.
+
+Örnek: root x'dir. root'un sağından y bulunur. Solunda z bulunur vb.
+***************************************************************************************************************************************************************
+          6(1)              --> STEP 1 : Root 6 olarak 'kabul edip' dizimizi yerleştirelim.
+         /  \               --> STEP 2 : 7 6'dan büyük olduğu için sağ tarafa yazılır.
+        /    \              --> STEP 3 : 5 6'dan küçük olduğu için sol tarafa yazılır.
+      5(3)    7(2)          --> STEP 4 : 1<6 old. için sol tarafa gider. 1<5 old. için 5'in sol tarafına yazılır.
+      /         \           --> STEP 5 : 8>6 old. için sağ tarafa gider. 8>7 old. için 7'in sağ tarafına yazılır.
+     /           \          --> STEP 6 : 3<6 old. için sol tarafa gider. 3<5 old. için sol tarafa gider.3>1 old. için 1'in sağ tarafına yazılır.
+   1(4)          8(5)       --> STEP 7 : 0<6 old. için sol tarafa gider. 0<5 old. için sol tarafa gider.0<1 old. için 1'in sol tarafına yazılır.    
+   / \              \       --> STEP 8 : 9>6 old. için sağ tarafa gider. 9>7 old. için sağ tarafa gider.9>8 old. için 8'in sağ tarafına yazılır.
+  /   \              \      --> STEP 9 : 4<6 old. için sol tarafa gider. 4<5 old. için sol tarafa gider.4>1 old. için sağ tarafa gider.4>3 old. için 3'ün sağına yazılır.
+0(7)  3(6)           9(8)   --> STEP 9 : 2<6 old. için sol tarafa gider. 2<5 old. için sol tarafa gider.2>1 old. için sağ tarafa gider.2<3 old. için 3'ün soluna yazılır.
+      /  \   
+     /    \
+   2(10)  4(9)
+***************************************************************************************************************************************************************   
